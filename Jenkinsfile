@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        docker {
-          image 'node:10.11.0-alpine'
-          label 'my-nodejs-image'
-        }
-     }
+    agent any
+    tools {nodejs "nodejs"}
     stages {
         stage('build') {
             steps {
