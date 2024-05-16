@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh "npm i"
+                sh "which npm"
+                sh "/usr/bin/npm i"
             }
         }
         stage('test') {
