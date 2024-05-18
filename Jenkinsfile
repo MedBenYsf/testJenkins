@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        FIRSTNAME = "Med"
+        LASTNAME = "BEN"
+    }
     tools {nodejs "nodejs"}
     stages {
         stage('build') {
@@ -15,7 +19,7 @@ pipeline {
     }
     post {
         always {
-            echo 'job run finished'
+            echo 'job run finished ${FIRSTNAME} ${LASTNAME}'
         }
         success {
             echo 'job run finished with success'
