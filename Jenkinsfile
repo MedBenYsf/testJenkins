@@ -19,7 +19,7 @@ pipeline {
     }
     post {
         always {
-            echo "job run finished ${FIRSTNAME} ${LASTNAME}"
+            echo "job run finished, ${FIRSTNAME} ${LASTNAME}"
         }
         success {
             echo 'job run finished with success'
