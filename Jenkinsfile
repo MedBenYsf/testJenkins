@@ -9,9 +9,19 @@ pipeline {
         }
         stage('test') {
             steps {
-                retry(3)
                 sh "npm run test"
             }
+        }
+    }
+    post {
+        always {
+            echo 'job run finished'
+        }
+        success {
+            echo 'job run finished with success'
+        }
+        failure {
+            echo 'job run finished with failure'
         }
     }
 }
